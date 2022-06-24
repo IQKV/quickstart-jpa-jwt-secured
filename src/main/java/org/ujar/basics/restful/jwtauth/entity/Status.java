@@ -1,4 +1,4 @@
-package org.ujar.basics.restful.jwtauth.model;
+package org.ujar.basics.restful.jwtauth.entity;
 
 /**
  * Enumeration that represents status of domain objects - ACTIVE, DELETED, etc.

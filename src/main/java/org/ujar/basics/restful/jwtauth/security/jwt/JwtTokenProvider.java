@@ -9,45 +9,47 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-import org.ujar.basics.restful.jwtauth.model.Role;
+import org.ujar.basics.restful.jwtauth.entity.Role;
 
 @Component
-@RequiredArgsConstructor
 public class JwtTokenProvider {
 
   private final UserDetailsService userDetailsService;
-  @Value("${jwt.token.secret}")
-  private String secret;
-  @Value("${jwt.token.expired}")
-  private long validityInMilliseconds;
 
-  @PostConstruct
-  protected void init() {
-    secret = Base64.getEncoder().encodeToString(secret.getBytes());
+  private final String secret;
+
+  private final long validityInMilliseconds;
+
+  @Autowired
+  public JwtTokenProvider(UserDetailsService userDetailsService,
+                          @Value("${jwt.token.secret}") String secret,
+                          @Value("${jwt.token.expired}") long validityInMilliseconds) {
+    this.userDetailsService = userDetailsService;
+    this.secret = Base64.getEncoder().encodeToString(secret.getBytes());
+    this.validityInMilliseconds = validityInMilliseconds;
   }
 
-  public String createToken(String username, List<Role> roles) {
+  public String createToken(final String username, final List<Role> roles) {
 
-    Claims claims = Jwts.claims().setSubject(username);
+    final var claims = Jwts.claims().setSubject(username);
     claims.put("roles", getRoleNames(roles));
 
-    Date now = new Date();
-    Date validity = new Date(now.getTime() + validityInMilliseconds);
+    final var now = new Date();
+    final var validity = new Date(now.getTime() + validityInMilliseconds);
 
-    return Jwts.builder()//
-        .setClaims(claims)//
-        .setIssuedAt(now)//
-        .setExpiration(validity)//
-        .signWith(SignatureAlgorithm.HS256, secret)//
+    return Jwts.builder()
+        .setClaims(claims)
+        .setIssuedAt(now)
+        .setExpiration(validity)
+        .signWith(SignatureAlgorithm.HS256, secret)
         .compact();
   }
 
@@ -60,8 +62,8 @@ public class JwtTokenProvider {
     return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
   }
 
-  public String resolveToken(HttpServletRequest req) {
-    String bearerToken = req.getHeader("Authorization");
+  public String resolveToken(final HttpServletRequest request) {
+    String bearerToken = request.getHeader("Authorization");
     if (bearerToken != null && bearerToken.startsWith("Bearer_")) {
       return bearerToken.substring(7);
     }
@@ -78,8 +80,8 @@ public class JwtTokenProvider {
     }
   }
 
-  private List<String> getRoleNames(List<Role> userRoles) {
-    List<String> result = new ArrayList<>();
+  private List<String> getRoleNames(final List<Role> userRoles) {
+    final var result = new ArrayList<String>();
 
     userRoles.forEach(role -> {
       result.add(role.getName());

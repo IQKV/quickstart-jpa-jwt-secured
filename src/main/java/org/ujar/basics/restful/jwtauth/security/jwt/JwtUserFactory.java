@@ -3,19 +3,18 @@ package org.ujar.basics.restful.jwtauth.security.jwt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.ujar.basics.restful.jwtauth.model.Role;
-import org.ujar.basics.restful.jwtauth.model.Status;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.Role;
+import org.ujar.basics.restful.jwtauth.entity.Status;
+import org.ujar.basics.restful.jwtauth.entity.User;
 
 /**
  * Implementation of Factory Method for class {@link JwtUser}.
  */
+@NoArgsConstructor
 public final class JwtUserFactory {
-
-  public JwtUserFactory() {
-  }
 
   public static JwtUser create(User user) {
     return new JwtUser(

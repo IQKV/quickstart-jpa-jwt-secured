@@ -1,6 +1,6 @@
 package org.ujar.basics.restful.jwtauth.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,21 +8,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.ujar.basics.restful.jwtauth.dto.UserDto;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.User;
 import org.ujar.basics.restful.jwtauth.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/users/")
-public class UserRestControllerV1 {
+@RequiredArgsConstructor
+public class UserV1Controller {
   private final UserService userService;
 
-  @Autowired
-  public UserRestControllerV1(UserService userService) {
-    this.userService = userService;
-  }
-
   @GetMapping(value = "{id}")
-  public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
+  public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") final Long id) {
     User user = userService.findById(id);
 
     if (user == null) {

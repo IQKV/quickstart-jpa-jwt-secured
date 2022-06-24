@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.ujar.basics.restful.jwtauth.dto.AdminUserDto;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.User;
 import org.ujar.basics.restful.jwtauth.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/admin/")
-public class AdminRestControllerV1 {
+public class AdminV1Controller {
   private final UserService userService;
 
   @Autowired
-  public AdminRestControllerV1(UserService userService) {
+  public AdminV1Controller(UserService userService) {
     this.userService = userService;
   }
 

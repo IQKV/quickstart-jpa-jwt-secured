@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.User;
 import org.ujar.basics.restful.jwtauth.security.jwt.JwtUser;
 import org.ujar.basics.restful.jwtauth.security.jwt.JwtUserFactory;
 import org.ujar.basics.restful.jwtauth.service.UserService;

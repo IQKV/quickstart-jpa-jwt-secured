@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ujar.basics.restful</groupId>
-    <artifactId>basics-restful-jwt-auth</artifactId>
+    <artifactId>restful-jwt-auth</artifactId>
     <version>0.8.0-SNAPSHOT</version>
     <name>restful-jwt-auth</name>
     <description>JWT-based Spring security REST API</description>
@@ -40,7 +40,14 @@
         <version>0.8.0-SNAPSHOT</version>
     </parent>
 
-
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <sonar.exclusions>**/*Application.java</sonar.exclusions>
+        <sonar.coverage.exclusions>**/*Config*.java,**/*Properties.java,**/*Test.java,**/Test*.java</sonar.coverage.exclusions>
+        <start-class>org.ujar.basics.restful.jwtauth.JwtAuthApplication</start-class>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,6 +95,11 @@
         </dependency>
         <dependency>
             <groupId>org.ujar.boot</groupId>
+            <artifactId>ujar-boot-starter-cache</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ujar.boot</groupId>
             <artifactId>ujar-boot-starter-restful</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
@@ -99,7 +111,17 @@
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -129,9 +151,21 @@
             </dependencies>
         </profile>
         <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>testcontainers-support</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <dependencies>
                 <dependency>
@@ -152,6 +186,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

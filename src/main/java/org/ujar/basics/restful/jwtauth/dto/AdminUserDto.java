@@ -2,8 +2,8 @@ package org.ujar.basics.restful.jwtauth.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.ujar.basics.restful.jwtauth.model.Status;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.Status;
+import org.ujar.basics.restful.jwtauth.entity.User;
 
 /**
  * DTO class for user requests by ROLE_ADMIN
@@ -19,7 +19,7 @@ public class AdminUserDto {
   private String status;
 
   public static AdminUserDto fromUser(User user) {
-    AdminUserDto adminUserDto = new AdminUserDto();
+    final var adminUserDto = new AdminUserDto();
     adminUserDto.setId(user.getId());
     adminUserDto.setUsername(user.getUsername());
     adminUserDto.setFirstName(user.getFirstName());
@@ -30,7 +30,7 @@ public class AdminUserDto {
   }
 
   public User toUser() {
-    User user = new User();
+    final var user = new User();
     user.setId(id);
     user.setUsername(username);
     user.setFirstName(firstName);

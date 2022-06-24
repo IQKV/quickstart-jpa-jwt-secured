@@ -1,5 +1,8 @@
 # JWT Auth Example - Sample Restful App
 
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/basics-restful-jwt-auth/status.svg)](https://drone.ujar.org/ujar-org/basics-restful-jwt-auth)
+[![Quality Gate Status](https://sonarqube.ujar.org/api/project_badges/measure?project=ujar-org%3Abasics-restful-jwt-auth&metric=alert_status&token=a214436d20108f6fcc42925ad1618f43d2ff8452)](https://sonarqube.ujar.org/dashboard?id=ujar-org%3Abasics-restful-jwt-auth)
+
 JWT-based Spring security REST API.
 
 ## Technology stack
@@ -18,8 +21,8 @@ The following items should be installed in your system:
 
 Application uses a MySQL as a persistent storage. Options to get it up:
 
-1. Use remote existing postgres. It is needed to specify the path in configs.
-1. Start local postgres in docker `docker-compose -f docker-compose.dev.yml up -d`
+1. Use remote existing mysql. It is needed to specify the path in configs.
+1. Start local mysql in docker `docker-compose -f docker-compose.dev.yml up -d`
 
 ### Running locally
 

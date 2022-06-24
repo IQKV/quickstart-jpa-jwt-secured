@@ -1,4 +1,4 @@
-package org.ujar.basics.restful.jwtauth.service.impl;
+package org.ujar.basics.restful.jwtauth.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.ujar.basics.restful.jwtauth.model.Role;
-import org.ujar.basics.restful.jwtauth.model.Status;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.Role;
+import org.ujar.basics.restful.jwtauth.entity.Status;
+import org.ujar.basics.restful.jwtauth.entity.User;
 import org.ujar.basics.restful.jwtauth.repository.RoleRepository;
 import org.ujar.basics.restful.jwtauth.repository.UserRepository;
-import org.ujar.basics.restful.jwtauth.service.UserService;
 
 /**
  * Implementation of {@link UserService} interface.
@@ -27,8 +26,8 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public User register(User user) {
-    Role roleUser = roleRepository.findByName("ROLE_USER");
-    List<Role> userRoles = new ArrayList<>();
+    var roleUser = roleRepository.findByName("ROLE_USER");
+    var userRoles = new ArrayList<Role>();
     userRoles.add(roleUser);
 
     user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -44,21 +43,21 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public List<User> getAll() {
-    List<User> result = userRepository.findAll();
+    final var result = userRepository.findAll();
     log.info("IN getAll - {} users found", result.size());
     return result;
   }
 
   @Override
   public User findByUsername(String username) {
-    User result = userRepository.findByUsername(username);
+    final var result = userRepository.findByUsername(username);
     log.info("IN findByUsername - user: {} found by username: {}", result, username);
     return result;
   }
 
   @Override
   public User findById(Long id) {
-    User result = userRepository.findById(id).orElse(null);
+    var result = userRepository.findById(id).orElse(null);
 
     if (result == null) {
       log.warn("IN findById - no user found by id: {}", id);

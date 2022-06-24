@@ -1,7 +1,7 @@
 package org.ujar.basics.restful.jwtauth.service;
 
 import java.util.List;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.User;
 
 /**
  * Service interface for class {@link User}.

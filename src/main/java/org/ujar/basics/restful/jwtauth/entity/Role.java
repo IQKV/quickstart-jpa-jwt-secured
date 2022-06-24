@@ -1,4 +1,4 @@
-package org.ujar.basics.restful.jwtauth.model;
+package org.ujar.basics.restful.jwtauth.entity;
 
 import java.util.List;
 import javax.persistence.Column;

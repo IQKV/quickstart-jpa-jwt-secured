@@ -2,7 +2,7 @@ package org.ujar.basics.restful.jwtauth.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.ujar.basics.restful.jwtauth.model.User;
+import org.ujar.basics.restful.jwtauth.entity.User;
 
 /**
  * DTO class for user requests by ROLE_USER
@@ -17,7 +17,7 @@ public class UserDto {
   private String email;
 
   public static UserDto fromUser(User user) {
-    UserDto userDto = new UserDto();
+    final var userDto = new UserDto();
     userDto.setId(user.getId());
     userDto.setUsername(user.getUsername());
     userDto.setFirstName(user.getFirstName());
@@ -28,7 +28,7 @@ public class UserDto {
   }
 
   public User toUser() {
-    User user = new User();
+    final var user = new User();
     user.setId(id);
     user.setUsername(username);
     user.setFirstName(firstName);
