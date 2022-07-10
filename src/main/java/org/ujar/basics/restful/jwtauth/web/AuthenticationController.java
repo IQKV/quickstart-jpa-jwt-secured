@@ -21,7 +21,7 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 @RestController
 @RequestMapping(value = "/api/v1/auth/")
 @RequiredArgsConstructor
-public class AuthenticationV1Controller {
+public class AuthenticationController {
   private final AuthenticationManager authenticationManager;
   private final JwtTokenProvider jwtTokenProvider;
   private final UserService userService;

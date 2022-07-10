@@ -13,11 +13,11 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/admin/")
-public class AdminV1Controller {
+public class AdminController {
   private final UserService userService;
 
   @Autowired
-  public AdminV1Controller(UserService userService) {
+  public AdminController(UserService userService) {
     this.userService = userService;
   }
 

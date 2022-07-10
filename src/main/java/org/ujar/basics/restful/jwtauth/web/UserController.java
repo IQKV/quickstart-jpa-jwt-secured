@@ -14,7 +14,7 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 @RestController
 @RequestMapping(value = "/api/v1/users/")
 @RequiredArgsConstructor
-public class UserV1Controller {
+public class UserController {
   private final UserService userService;
 
   @GetMapping(value = "{id}")
