@@ -2,7 +2,7 @@ version : '3'
 services :
   mysql :
     image : mysql:5.7.34
-    container_name : ujar-basics-restful-dev-jwt-auth-mysql
+    container_name : basics-restful-dev-jwt-auth-mysql
     restart : unless-stopped
     ports :
       - 3306:3306
@@ -12,3 +12,33 @@ services :
       - MYSQL_PASSWORD=sa_test
       - MYSQL_ROOT_PASSWORD=sa_root
       - TZ=UTC
+  prometheus :
+    container_name : basics-restful-dev-jwt-auth-prometheus
+    image : prom/prometheus:v2.32.1
+    volumes :
+      - ./docker/prometheus/:/etc/prometheus/
+    command :
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports :
+      - 127.0.0.1:9090:9090
+    # On MacOS, remove next line and replace localhost by host.docker.internal in docker/prometheus/prometheus.yml and
+    # docker/grafana/provisioning/datasources/datasource.yml
+    network_mode : 'host' # to test locally running service
+  grafana :
+    container_name : basics-restful-dev-jwt-auth-grafana
+    image : grafana/grafana:8.3.3
+    volumes :
+      - ./docker/grafana/provisioning/:/etc/grafana/provisioning/
+    environment :
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports :
+      - 127.0.0.1:3000:3000
+    # On MacOS, remove next line and replace localhost by host.docker.internal in docker/prometheus/prometheus.yml and
+    # docker/grafana/provisioning/datasources/datasource.yml
+    network_mode : 'host' # to test locally running service
