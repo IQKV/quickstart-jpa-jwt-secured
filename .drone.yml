@@ -16,15 +16,17 @@ volumes :
       path : /volume1/m2cache
 steps :
 
-  - name: mysql healthcheck
-    image: mysql:5.7.34
-    commands:
+  - name : mysql healthcheck
+    image : mysql:5.7.34
+    pull: if-not-exists
+    commands :
       - while ! mysqladmin ping -h mysql-server -u sa_test -psa_test --silent; do sleep 1; done
       - mysql -h mysql-server -u sa_test -psa_test -e "CREATE TABLE IF NOT EXISTS sa_test_db.pipelines (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL);"
 
 
   - name : build
-    image : maven:3-openjdk-17-slim
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    pull: if-not-exists
     volumes :
       - name : m2cache
         path : /root/.m2
@@ -40,10 +42,10 @@ steps :
       SONAR_TOKEN :
         from_secret : SONAR_TOKEN
     commands :
-      - mvn clean compile test-compile -P default -B  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn pmd:check -B --file pom.xml -P default -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      #- mvn com.github.spotbugs:spotbugs-maven-plugin:check -P default -Dspotbugs.xmlOutput=true -Dspotbugs.failOnError=true -Dspotbugs.includeTests=true  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:basics-restful-jwt-auth -Dsonar.projectName=ujar-org:basics-restful-jwt-auth --batch-mode  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn clean compile test-compile -P default -B  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn pmd:check -B --file pom.xml -P default -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      #- mvn com.github.spotbugs:spotbugs-maven-plugin:check -P default -Dspotbugs.xmlOutput=true -Dspotbugs.failOnError=true -Dspotbugs.includeTests=true  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:basics-restful-jwt-auth -Dsonar.projectName=ujar-org:basics-restful-jwt-auth --batch-mode  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
     when :
       branch :
         include :
@@ -54,7 +56,8 @@ steps :
   - name : publish-snapshot-package
     depends_on :
       - build
-    image : maven:3-openjdk-17-slim
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    pull: if-not-exists
     volumes :
       - name : m2cache
         path : /root/.m2
@@ -64,7 +67,7 @@ steps :
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands :
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
     when :
       branch :
         include :
@@ -75,7 +78,8 @@ steps :
   - name : publish-release-package
     depends_on :
       - build
-    image : maven:3-openjdk-17-slim
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    pull: if-not-exists
     volumes :
       - name : m2cache
         path : /root/.m2
@@ -85,7 +89,7 @@ steps :
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands :
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
     when :
       event : tag
 
@@ -116,7 +120,7 @@ services :
   - name : mysql-server
     image : mysql:5.7.34
     environment :
-       MYSQL_DATABASE: sa_test_db
-       MYSQL_USER: sa_test
-       MYSQL_PASSWORD: sa_test
-       MYSQL_ROOT_PASSWORD: sa_root
+      MYSQL_DATABASE : sa_test_db
+      MYSQL_USER : sa_test
+      MYSQL_PASSWORD : sa_test
+      MYSQL_ROOT_PASSWORD : sa_root
