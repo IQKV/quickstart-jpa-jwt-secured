@@ -21,14 +21,14 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 @RestController
 @RequestMapping(value = "/api/v1/auth/")
 @RequiredArgsConstructor
-public class AuthenticationController {
+class AuthenticationController {
   private final AuthenticationManager authenticationManager;
   private final JwtTokenProvider jwtTokenProvider;
   private final UserService userService;
 
 
   @PostMapping("login")
-  public ResponseEntity<Map<String, String>> login(@RequestBody final AuthenticationRequestDto requestDto) {
+  ResponseEntity<Map<String, String>> login(@RequestBody final AuthenticationRequestDto requestDto) {
     try {
       String username = requestDto.getUsername();
       authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDto.getPassword()));
@@ -40,7 +40,7 @@ public class AuthenticationController {
 
       String token = jwtTokenProvider.createToken(username, user.getRoles());
 
-      var response = new HashMap<String, String>();
+      final var response = new HashMap<String, String>();
       response.put("username", username);
       response.put("token", token);
 

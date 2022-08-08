@@ -14,11 +14,11 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 @RestController
 @RequestMapping(value = "/api/v1/users/")
 @RequiredArgsConstructor
-public class UserController {
+class UserController {
   private final UserService userService;
 
   @GetMapping(value = "{id}")
-  public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") final Long id) {
+  ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") final Long id) {
     User user = userService.findById(id);
 
     if (user == null) {
