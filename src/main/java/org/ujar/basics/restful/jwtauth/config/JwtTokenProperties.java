@@ -8,6 +8,6 @@ import org.springframework.validation.annotation.Validated;
 @ConstructorBinding
 @Validated
 @ConfigurationProperties("ujar.jwt.token")
-public record JwtTokenProperties(@NotNull String secret, @NotNull Long expired) {
+public record JwtTokenProperties(@NotNull String secret, @NotNull Long expiration) {
 
 }

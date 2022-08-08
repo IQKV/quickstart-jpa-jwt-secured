@@ -118,7 +118,7 @@ ujar :
   jwt :
     token :
       secret : ${JWT_TOKEN_SECRET:jwtapptokensecret}
-      expired : 3600000
+      expiration : 3600000
 
 springdoc :
   show-actuator : true

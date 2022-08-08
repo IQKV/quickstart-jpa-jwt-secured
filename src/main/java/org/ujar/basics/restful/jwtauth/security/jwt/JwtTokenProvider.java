@@ -34,7 +34,7 @@ public class JwtTokenProvider {
                           JwtTokenProperties jwtTokenProperties) {
     this.userDetailsService = userDetailsService;
     this.secret = Base64.getEncoder().encodeToString(jwtTokenProperties.secret().getBytes(StandardCharsets.UTF_8));
-    this.validityInMilliseconds = jwtTokenProperties.expired();
+    this.validityInMilliseconds = jwtTokenProperties.expiration();
   }
 
   public String createToken(final String username, final List<Role> roles) {

@@ -40,4 +40,4 @@ ujar :
   jwt :
     token :
       secret : jwtapptokensecret
-      expired : 3600000
+      expiration : 3600000
