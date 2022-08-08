@@ -33,8 +33,8 @@ public class JwtTokenProvider {
   public JwtTokenProvider(UserDetailsService userDetailsService,
                           JwtTokenProperties jwtTokenProperties) {
     this.userDetailsService = userDetailsService;
-    this.secret = Base64.getEncoder().encodeToString(jwtTokenProperties.secret().getBytes(StandardCharsets.UTF_8));
-    this.validityInMilliseconds = jwtTokenProperties.expiration();
+    this.secret = Base64.getEncoder().encodeToString(jwtTokenProperties.getSecret().getBytes(StandardCharsets.UTF_8));
+    this.validityInMilliseconds = jwtTokenProperties.getExpiration();
   }
 
   public String createToken(final String username, final List<Role> roles) {
