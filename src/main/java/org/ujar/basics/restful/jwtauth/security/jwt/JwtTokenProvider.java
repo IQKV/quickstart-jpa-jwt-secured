@@ -5,18 +5,19 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
+import org.ujar.basics.restful.jwtauth.config.JwtTokenProperties;
 import org.ujar.basics.restful.jwtauth.entity.Role;
 
 @Component
@@ -30,11 +31,10 @@ public class JwtTokenProvider {
 
   @Autowired
   public JwtTokenProvider(UserDetailsService userDetailsService,
-                          @Value("${jwt.token.secret}") String secret,
-                          @Value("${jwt.token.expired}") long validityInMilliseconds) {
+                          JwtTokenProperties jwtTokenProperties) {
     this.userDetailsService = userDetailsService;
-    this.secret = Base64.getEncoder().encodeToString(secret.getBytes());
-    this.validityInMilliseconds = validityInMilliseconds;
+    this.secret = Base64.getEncoder().encodeToString(jwtTokenProperties.secret().getBytes(StandardCharsets.UTF_8));
+    this.validityInMilliseconds = jwtTokenProperties.expired();
   }
 
   public String createToken(final String username, final List<Role> roles) {

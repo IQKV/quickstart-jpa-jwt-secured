@@ -3,11 +3,11 @@ package org.ujar.basics.restful.jwtauth.config;
 import javax.sql.DataSource;
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.ujar.boot.starter.logbook.LogbookJsonBodyFilter;
@@ -19,7 +19,7 @@ import org.ujar.boot.starter.logbook.LogbookResponseOnStatus;
 @EnableJpaRepositories({"org.ujar.basics.restful.jwtauth.repository"})
 @EnableJpaAuditing
 @EnableTransactionManagement
-@EnableSpringDataWebSupport
+@EnableConfigurationProperties(JwtTokenProperties.class)
 class ApplicationConfig {
 
   @Bean

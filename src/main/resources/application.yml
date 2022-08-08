@@ -48,12 +48,12 @@ spring :
       hibernate.query.fail_on_pagination_over_collection_fetch : true
       hibernate.query.in_clause_parameter_padding : true
     show-sql : false
-  devtools:
+  devtools :
     add-properties : false
-    restart:
-      enabled: false
-    livereload:
-      enabled: false
+    restart :
+      enabled : false
+    livereload :
+      enabled : false
 
   jackson :
     default-property-inclusion : NON_NULL
@@ -114,10 +114,11 @@ management :
     info :
       enabled : true
 
-jwt :
-  token :
-    secret : jwtapptokensecret
-    expired : 3600000
+ujar :
+  jwt :
+    token :
+      secret : ${JWT_TOKEN_SECRET:jwtapptokensecret}
+      expired : 3600000
 
 springdoc :
   show-actuator : true

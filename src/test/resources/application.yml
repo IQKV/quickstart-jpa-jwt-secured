@@ -36,7 +36,8 @@ spring :
       enabled : false
     livereload :
       enabled : false
-jwt :
-  token :
-    secret : jwtapptokensecret
-    expired : 3600000
+ujar :
+  jwt :
+    token :
+      secret : jwtapptokensecret
+      expired : 3600000
