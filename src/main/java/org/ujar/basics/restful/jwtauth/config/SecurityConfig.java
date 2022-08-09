@@ -15,7 +15,7 @@ import org.ujar.basics.restful.jwtauth.security.jwt.JwtTokenProvider;
  */
 @Configuration
 @RequiredArgsConstructor
-class SecurityConfig  extends WebSecurityConfigurerAdapter {
+class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private static final String ADMIN_ENDPOINT = "/api/v1/admin/**";
   private static final String LOGIN_ENDPOINT = "/api/v1/auth/login";
