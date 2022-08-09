@@ -8,13 +8,13 @@ import org.ujar.basics.restful.jwtauth.entity.User;
  */
 public interface UserService {
 
-  User register(User user);
+  User register(final User user);
 
   List<User> getAll();
 
-  User findByUsername(String username);
+  User findByUsername(final String username);
 
-  User findById(Long id);
+  User findById (final Long id);
 
-  void delete(Long id);
+  void delete(final Long id);
 }

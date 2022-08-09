@@ -25,9 +25,9 @@ public class UserServiceImpl implements UserService {
   private final BCryptPasswordEncoder passwordEncoder;
 
   @Override
-  public User register(User user) {
-    var roleUser = roleRepository.findByName("ROLE_USER");
-    var userRoles = new ArrayList<Role>();
+  public User register(final User user) {
+    final var roleUser = roleRepository.findByName("ROLE_USER");
+    final var userRoles = new ArrayList<Role>();
     userRoles.add(roleUser);
 
     user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -49,15 +49,15 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public User findByUsername(String username) {
+  public User findByUsername(final String username) {
     final var result = userRepository.findByUsername(username);
     log.info("IN findByUsername - user: {} found by username: {}", result, username);
     return result;
   }
 
   @Override
-  public User findById(Long id) {
-    var result = userRepository.findById(id).orElse(null);
+  public User findById(final Long id) {
+    final var result = userRepository.findById(id).orElse(null);
 
     if (result == null) {
       log.warn("IN findById - no user found by id: {}", id);
@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public void delete(Long id) {
+  public void delete(final Long id) {
     userRepository.deleteById(id);
     log.info("IN delete - user with id: {} successfully deleted", id);
   }
