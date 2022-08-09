@@ -1,5 +1,6 @@
 package org.ujar.basics.restful.jwtauth.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -64,7 +65,7 @@ public class User {
   @JoinTable(name = "user_roles",
              joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
              inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
-  private List<Role> roles;
+  private List<Role> roles = new ArrayList<>();
 
   @Override
   public String toString() {
