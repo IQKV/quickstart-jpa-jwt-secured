@@ -2,7 +2,6 @@ package org.ujar.basics.restful.jwtauth.web;
 
 import java.util.HashMap;
 import java.util.Map;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -20,12 +19,9 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/auth/")
-@RequiredArgsConstructor
-class AuthenticationController {
-  private final AuthenticationManager authenticationManager;
-  private final JwtTokenProvider jwtTokenProvider;
-  private final UserService userService;
-
+record AuthenticationController(AuthenticationManager authenticationManager,
+                                JwtTokenProvider jwtTokenProvider,
+                                UserService userService) {
 
   @PostMapping("login")
   ResponseEntity<Map<String, String>> login(@RequestBody final AuthenticationRequestDto requestDto) {

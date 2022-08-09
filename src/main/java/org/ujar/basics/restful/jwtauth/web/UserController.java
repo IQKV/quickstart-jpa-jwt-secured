@@ -1,6 +1,5 @@
 package org.ujar.basics.restful.jwtauth.web;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +12,7 @@ import org.ujar.basics.restful.jwtauth.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/users/")
-@RequiredArgsConstructor
-class UserController {
-  private final UserService userService;
+record UserController(UserService userService) {
 
   @GetMapping(value = "{id}")
   ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") final Long id) {
