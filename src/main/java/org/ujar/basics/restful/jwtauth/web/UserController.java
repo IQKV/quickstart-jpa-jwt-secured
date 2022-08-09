@@ -19,13 +19,13 @@ class UserController {
 
   @GetMapping(value = "{id}")
   ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") final Long id) {
-    User user = userService.findById(id);
+    final User user = userService.findById(id);
 
     if (user == null) {
       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    UserDto result = UserDto.fromUser(user);
+    final UserDto result = UserDto.fromUser(user);
 
     return new ResponseEntity<>(result, HttpStatus.OK);
   }
