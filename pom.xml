@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ujar.basics.restful</groupId>
     <artifactId>restful-jwt-auth</artifactId>
-    <version>0.10.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>restful-jwt-auth</name>
     <description>JWT-based Spring security REST API</description>
     <licenses>
@@ -37,7 +37,7 @@
     <parent>
         <groupId>org.ujar.parent</groupId>
         <artifactId>ujar-parent-pom</artifactId>
-        <version>0.10.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
 
     <properties>
