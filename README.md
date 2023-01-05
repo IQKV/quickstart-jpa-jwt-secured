@@ -1,6 +1,6 @@
 # JWT Auth Example - Sample Restful App
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/basics-restful-jwt-auth/status.svg)](https://drone.ujar.org/ujar-org/basics-restful-jwt-auth)
+[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/basics-restful-jwt-auth/status.svg)](https://drone.c2a2.com/ujar-org/basics-restful-jwt-auth)
 
 JWT-based Spring security REST API.
 
@@ -61,7 +61,7 @@ Visit [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.h
 The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
 quality is measured by:
 
-- [Sonarqube](https://sonarqube.ujar.org/dashboard?id=ujar-org%3Abasics-restful-jwt-auth)
+- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-restful-jwt-auth)
 - [PMD](https://pmd.github.io/)
 - [CheckStyle](https://checkstyle.sourceforge.io/)
 - [SpotBugs](https://spotbugs.github.io/)
