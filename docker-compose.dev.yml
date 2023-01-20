@@ -2,7 +2,7 @@ version : '3'
 services :
   mysql :
     image : mysql:5.7.39
-    container_name : basics-restful-dev-jwt-auth-mysql
+    container_name : bs-rst-dev-jwt-auth-mysql
     restart : unless-stopped
     ports :
       - 3306:3306
@@ -13,7 +13,7 @@ services :
       - MYSQL_ROOT_PASSWORD=sa_root
       - TZ=UTC
   prometheus :
-    container_name : basics-restful-dev-jwt-auth-prometheus
+    container_name : bs-rst-dev-jwt-auth-prometheus
     image : prom/prometheus:v2.37.1
     volumes :
       - ./docker/prometheus/:/etc/prometheus/
@@ -23,7 +23,7 @@ services :
     # docker/grafana/provisioning/datasources/datasource.yml
     network_mode : 'host' # to test locally running service
   grafana :
-    container_name : basics-restful-dev-jwt-auth-grafana
+    container_name : bs-rst-dev-jwt-auth-grafana
     image : grafana/grafana:8.5.13
     volumes :
       - ./docker/grafana/provisioning/:/etc/grafana/provisioning/

@@ -1,6 +1,6 @@
 # JWT Auth Example - Sample Restful App
 
-[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/basics-restful-jwt-auth/status.svg)](https://drone.c2a2.com/ujar-org/basics-restful-jwt-auth)
+[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/bs-rst-jwt-auth/status.svg)](https://drone.c2a2.com/ujar-org/bs-rst-jwt-auth)
 
 JWT-based Spring security REST API.
 
@@ -29,8 +29,8 @@ This application is a [Spring Boot](https://spring.io/guides/gs/spring-boot) app
 using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
 
 ```
-git clone https://github.com/ujar-org/basics-restful-jwt-auth.git
-cd basics-restful-jwt-auth
+git clone https://github.com/ujar-org/bs-rst-jwt-auth.git
+cd bs-rst-jwt-auth
 ./mvnw package
 java -jar target/*.jar
 ```
@@ -42,7 +42,7 @@ You can then access Swagger UI here: http://localhost:8080/swagger-ui.html
 1) On the command line
 
 ```
-git clone https://github.com/ujar-org/basics-restful-jwt-auth.git
+git clone https://github.com/ujar-org/bs-rst-jwt-auth.git
 ```
 
 2) Inside IDE
@@ -61,7 +61,7 @@ Visit [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.h
 The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
 quality is measured by:
 
-- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-restful-jwt-auth)
+- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abs-rst-jwt-auth)
 - [PMD](https://pmd.github.io/)
 - [CheckStyle](https://checkstyle.sourceforge.io/)
 - [SpotBugs](https://spotbugs.github.io/)
