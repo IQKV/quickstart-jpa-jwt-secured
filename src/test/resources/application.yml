@@ -7,7 +7,7 @@ spring :
   main :
     allow-circular-references : true
   application :
-    name : bs-rst-jwt-auth
+    name : bs-jwt-auth
   datasource :
     type : com.zaxxer.hikari.HikariDataSource
     driver-class-name : ${DATASOURCE_DRIVER:org.h2.Driver}

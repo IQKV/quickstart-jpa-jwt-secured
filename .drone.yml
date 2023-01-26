@@ -45,7 +45,7 @@ steps :
       - mvn clean compile test-compile -P default -B  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
       - mvn pmd:check -B --file pom.xml -P default -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
       #- mvn com.github.spotbugs:spotbugs-maven-plugin:check -P default -Dspotbugs.xmlOutput=true -Dspotbugs.failOnError=true -Dspotbugs.includeTests=true  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:bs-rst-jwt-auth -Dsonar.projectName=ujar-org:bs-rst-jwt-auth --batch-mode  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:bs-jwt-auth -Dsonar.projectName=ujar-org:bs-jwt-auth --batch-mode  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
     when :
       branch :
         include :
@@ -105,7 +105,7 @@ steps :
         from_secret : DOCKER_USERNAME
       password :
         from_secret : DOCKER_PASSWORD
-      repo : docker-registry.c2a2.com/ujar/bs-rst-jwt-auth
+      repo : docker-registry.c2a2.com/ujar/bs-jwt-auth
       registry : docker-registry.c2a2.com
       tags :
         - latest

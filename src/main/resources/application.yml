@@ -17,7 +17,7 @@ info :
 
 spring :
   application :
-    name : bs-rst-jwt-auth
+    name : bs-jwt-auth
   datasource :
     type : com.zaxxer.hikari.HikariDataSource
     url : ${DATASOURCE_URL:jdbc:mysql://localhost:3306/sa_test_db?serverTimezone=UTC}
