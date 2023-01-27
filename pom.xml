@@ -29,11 +29,6 @@
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:https://github.com/ujar-org/bs-jwt-auth.git</connection>
-        <tag>HEAD</tag>
-    </scm>
-
     <parent>
         <groupId>org.ujar.parent</groupId>
         <artifactId>ujar-parent-pom</artifactId>
