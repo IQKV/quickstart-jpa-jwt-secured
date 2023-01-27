@@ -1,6 +1,5 @@
 # JWT Auth Example
 
-[![Build Status](http://iaolg9igjr3tghootxslfe.webrelay.io/api/badges/ujar-org/bs-jwt-auth/status.svg)](http://iaolg9igjr3tghootxslfe.webrelay.io/ujar-org/bs-jwt-auth)
 
 JWT-based Spring security REST API.
 
