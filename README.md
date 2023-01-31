@@ -28,8 +28,8 @@ This application is a [Spring Boot](https://spring.io/guides/gs/spring-boot) app
 using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
 
 ```
-git clone https://github.com/ujar-org/bs-jwt-auth.git
-cd bs-jwt-auth
+git clone https://github.com/ujar-org/bs-sec-jwt.git
+cd bs-sec-jwt
 ./mvnw package
 java -jar target/*.jar
 ```
@@ -41,7 +41,7 @@ You can then access Swagger UI here: http://localhost:8080/swagger-ui.html
 1) On the command line
 
 ```
-git clone https://github.com/ujar-org/bs-jwt-auth.git
+git clone https://github.com/ujar-org/bs-sec-jwt.git
 ```
 
 2) Inside IDE

@@ -2,10 +2,10 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.ujar.bs.jwt</groupId>
-    <artifactId>bs-jwt-auth</artifactId>
+    <groupId>org.ujar.bs.sec.jwt</groupId>
+    <artifactId>bs-sec-jwt</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <name>bs-jwt-auth</name>
+    <name>bs-sec-jwt</name>
     <description>JWT-based Spring security REST API</description>
     <licenses>
         <license>
@@ -41,7 +41,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
         <sonar.coverage.exclusions>**/*Config*.java,**/*Properties.java,**/*Test.java,**/Test*.java</sonar.coverage.exclusions>
-        <start-class>org.ujar.bs.jwt.auth.JwtAuthApplication</start-class>
+        <start-class>org.ujar.bs.sec.jwt.JwtAuthApplication</start-class>
     </properties>
     <dependencies>
         <dependency>
