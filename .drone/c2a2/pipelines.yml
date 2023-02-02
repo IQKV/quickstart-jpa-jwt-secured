@@ -125,7 +125,7 @@ steps :
       repo : docker-registry.c2a2.com/ujar/bs-sec-jwt
       registry : docker-registry.c2a2.com
       tags :
-        - 0.1.0
+        - ${DRONE_TAG}
     when :
       ref :
         - refs/tags/*
