@@ -10,12 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.ujar.boot.starter.logbook.LogbookJsonBodyFilter;
-import org.ujar.boot.starter.logbook.LogbookResponseOnStatus;
 
 @Configuration
-@LogbookResponseOnStatus
-@LogbookJsonBodyFilter
 @EnableJpaRepositories({"org.ujar.bs.sec.jwt.repository"})
 @EnableJpaAuditing
 @EnableTransactionManagement

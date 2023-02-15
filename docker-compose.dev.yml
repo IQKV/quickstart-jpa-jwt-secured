@@ -1,7 +1,7 @@
 version : '3'
 services :
   mysql :
-    image : mysql:5.7.39
+    image : mysql:5.7.41
     container_name : bs-rst-dev-jwt-auth-mysql
     restart : unless-stopped
     ports :
