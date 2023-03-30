@@ -1,10 +1,5 @@
-build :
-  description : '@project.description@'
-  relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
-  version : '@project.version@'
-
 git :
-  commit : '@git.commit.id@'
+  commit : '@git.commit.id.abbrev@'
   build_time : '@git.build.time@'
 
 info :
@@ -17,7 +12,9 @@ info :
 
 spring :
   application :
-    name : bs-sec-jwt
+    name : quickstart-jpa-jwt-secured
+  liquibase :
+    change-log : db/changelog/master.xml
   datasource :
     type : com.zaxxer.hikari.HikariDataSource
     url : ${DATASOURCE_URL:jdbc:mysql://localhost:3306/sa_test_db?serverTimezone=UTC}
@@ -90,19 +87,23 @@ management :
       show-details : always
       probes :
         enabled : true
-    prometheus :
-      enabled : true
     info :
+      enabled : true
+    prometheus :
       enabled : true
 
 ujar :
+  build :
+    description : '@project.description@'
+    relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
+    version : '@project.version@'
   jwt :
     token :
       secret : ${JWT_TOKEN_SECRET:jwtapptokensecret}
       expiration : 3600000
 
 springdoc :
-  show-actuator : true
+  show-actuator : false
   swagger-ui :
     config-url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs/swagger-config
     url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs

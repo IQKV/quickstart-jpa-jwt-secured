@@ -1,13 +1,10 @@
-build :
-  description : '@project.description@'
-  relative-path : ''
-  version : '@project.version@'
-
 spring :
   main :
     allow-circular-references : true
   application :
-    name : bs-sec-jwt
+    name : quickstart-jpa-jwt-secured
+  liquibase :
+    change-log : db/changelog/master.xml
   datasource :
     type : com.zaxxer.hikari.HikariDataSource
     driver-class-name : ${DATASOURCE_DRIVER:org.h2.Driver}
@@ -36,7 +33,12 @@ spring :
       enabled : false
     livereload :
       enabled : false
+
 ujar :
+  build :
+    description : '@project.description@'
+    relative-path : ''
+    version : '@project.version@'
   jwt :
     token :
       secret : jwtapptokensecret

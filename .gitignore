@@ -8,6 +8,7 @@ node_modules/
 npm-debug.log.*
 /.awcache/*
 /.cache-loader/*
+package-lock.json
 
 ######################
 # SASS
@@ -169,5 +170,3 @@ cmake-build-*/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
-
-.jpb
