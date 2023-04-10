@@ -7,10 +7,10 @@ services :
     ports :
       - 3306:3306
     environment :
-      - MYSQL_DATABASE=sa_test_db
-      - MYSQL_USER=sa_test
-      - MYSQL_PASSWORD=sa_test
-      - MYSQL_ROOT_PASSWORD=sa_root
+      - MYSQL_DATABASE=svc_testing_db
+      - MYSQL_USER=svc_testing
+      - MYSQL_PASSWORD=svc_testing
+      - MYSQL_ROOT_PASSWORD=svc_root
       - TZ=UTC
   prometheus :
     container_name : quickstart-dev-jwt-auth-prometheus
