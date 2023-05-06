@@ -1,6 +1,5 @@
 package org.ujar.jwtsecured.web;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +12,7 @@ import org.ujar.jwtsecured.service.AuthenticationService;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@RequiredArgsConstructor
-public class AuthenticationResource {
-
-  private final AuthenticationService service;
+record AuthenticationResource(AuthenticationService service)  {
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(

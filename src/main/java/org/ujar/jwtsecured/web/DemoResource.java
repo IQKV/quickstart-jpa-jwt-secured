@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/demo")
-public class DemoResource {
+record DemoResource() {
 
   @GetMapping
   public ResponseEntity<String> sayHello() {

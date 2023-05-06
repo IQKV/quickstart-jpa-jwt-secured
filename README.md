@@ -4,13 +4,13 @@ JWT-based Spring security REST API.
 
 ## Technology stack
 
-Java 19, Spring Boot, JPA, Security
+Java 17, Spring Boot, JPA, Security
 
 ## Prerequisites
 
 The following items should be installed in your system:
 
-* Java 19 or newer.
+* Java 17 or newer.
 * git command line tool (https://help.github.com/articles/set-up-git)
 * Your preferred IDE (IDEA preferably)
 
