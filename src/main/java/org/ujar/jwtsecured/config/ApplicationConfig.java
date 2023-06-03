@@ -1,5 +1,7 @@
 package org.ujar.jwtsecured.config;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +17,7 @@ import org.ujar.jwtsecured.repository.UserRepository;
 
 @Configuration
 @RequiredArgsConstructor
+@OpenAPIDefinition(info = @Info(title = "JWT-based Spring security REST API", version = "23.0.0"))
 public class ApplicationConfig {
 
   private final UserRepository repository;
