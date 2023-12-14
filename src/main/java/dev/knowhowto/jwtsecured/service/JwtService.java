@@ -1,4 +1,4 @@
-package org.ujar.jwtsecured.service;
+package dev.knowhowto.jwtsecured.service;
 
 import java.security.Key;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package org.ujar.jwtsecured.entity;
+package dev.knowhowto.jwtsecured.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,4 +1,4 @@
-package org.ujar.jwtsecured.service;
+package dev.knowhowto.jwtsecured.service;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

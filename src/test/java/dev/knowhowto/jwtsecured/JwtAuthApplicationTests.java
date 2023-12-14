@@ -1,4 +1,4 @@
-package org.ujar.jwtsecured;
+package dev.knowhowto.jwtsecured;
 
 
 import org.junit.jupiter.api.Assertions;

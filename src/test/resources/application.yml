@@ -34,7 +34,7 @@ spring :
     livereload :
       enabled : false
 
-ujar :
+iqkv :
   build :
     description : '@project.description@'
     relative-path : '/'

@@ -1,16 +1,16 @@
-package org.ujar.jwtsecured.service;
+package dev.knowhowto.jwtsecured.service;
 
+import dev.knowhowto.jwtsecured.dto.AuthenticationRequest;
+import dev.knowhowto.jwtsecured.dto.AuthenticationResponse;
+import dev.knowhowto.jwtsecured.dto.RegisterRequest;
+import dev.knowhowto.jwtsecured.entity.Role;
+import dev.knowhowto.jwtsecured.entity.User;
+import dev.knowhowto.jwtsecured.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.ujar.jwtsecured.dto.AuthenticationRequest;
-import org.ujar.jwtsecured.dto.AuthenticationResponse;
-import org.ujar.jwtsecured.dto.RegisterRequest;
-import org.ujar.jwtsecured.entity.Role;
-import org.ujar.jwtsecured.entity.User;
-import org.ujar.jwtsecured.repository.UserRepository;
 
 @Service
 @RequiredArgsConstructor

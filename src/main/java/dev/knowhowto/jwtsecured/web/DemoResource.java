@@ -1,4 +1,4 @@
-package org.ujar.jwtsecured.web;
+package dev.knowhowto.jwtsecured.web;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,5 +1,6 @@
-package org.ujar.jwtsecured.config;
+package dev.knowhowto.jwtsecured.config;
 
+import dev.knowhowto.jwtsecured.repository.UserRepository;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.ujar.jwtsecured.repository.UserRepository;
 
 @Configuration
 @RequiredArgsConstructor

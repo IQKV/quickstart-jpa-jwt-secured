@@ -1,9 +1,9 @@
-package org.ujar.jwtsecured.repository;
+package dev.knowhowto.jwtsecured.repository;
 
 import java.util.Optional;
 
+import dev.knowhowto.jwtsecured.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.ujar.jwtsecured.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
