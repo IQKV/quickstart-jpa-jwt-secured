@@ -17,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @RequiredArgsConstructor
-@OpenAPIDefinition(info = @Info(title = "JWT-based Spring security REST API", version = "23.0.0"))
+@OpenAPIDefinition(info = @Info(title = "JWT-based Spring security REST API", version = "24.0.0"))
 public class ApplicationConfig {
 
   private final UserRepository repository;
