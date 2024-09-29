@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-record AuthenticationResource(AuthenticationService service)  {
+record AuthenticationResource(AuthenticationService service) {
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
