@@ -19,7 +19,7 @@ The following items should be installed in your system:
 Application uses a MySQL as a persistent storage. Options to get it up:
 
 1. Use remote existing mysql. It is needed to specify the path in configs.
-1. Start local mysql in docker `docker-compose -f docker-compose.dev.yml up -d`
+1. Start local mysql in docker `docker compose -f compose.yaml up -d`
 
 ### Running locally
 
