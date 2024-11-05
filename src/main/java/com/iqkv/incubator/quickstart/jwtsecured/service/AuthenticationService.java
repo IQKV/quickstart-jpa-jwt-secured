@@ -1,11 +1,11 @@
-package dev.knowhowto.jwtsecured.service;
+package com.iqkv.incubator.quickstart.jwtsecured.service;
 
-import dev.knowhowto.jwtsecured.dto.AuthenticationRequest;
-import dev.knowhowto.jwtsecured.dto.AuthenticationResponse;
-import dev.knowhowto.jwtsecured.dto.RegisterRequest;
-import dev.knowhowto.jwtsecured.entity.Role;
-import dev.knowhowto.jwtsecured.entity.User;
-import dev.knowhowto.jwtsecured.repository.UserRepository;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationRequest;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationResponse;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.RegisterRequest;
+import com.iqkv.incubator.quickstart.jwtsecured.entity.Role;
+import com.iqkv.incubator.quickstart.jwtsecured.entity.User;
+import com.iqkv.incubator.quickstart.jwtsecured.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

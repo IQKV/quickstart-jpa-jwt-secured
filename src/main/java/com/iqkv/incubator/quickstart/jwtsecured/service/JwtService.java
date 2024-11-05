@@ -1,4 +1,4 @@
-package dev.knowhowto.jwtsecured.service;
+package com.iqkv.incubator.quickstart.jwtsecured.service;
 
 import java.security.Key;
 import java.util.Date;

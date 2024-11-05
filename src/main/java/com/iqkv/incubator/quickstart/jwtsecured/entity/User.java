@@ -1,4 +1,4 @@
-package dev.knowhowto.jwtsecured.entity;
+package com.iqkv.incubator.quickstart.jwtsecured.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

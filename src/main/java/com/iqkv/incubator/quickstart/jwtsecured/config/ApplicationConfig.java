@@ -1,6 +1,6 @@
-package dev.knowhowto.jwtsecured.config;
+package com.iqkv.incubator.quickstart.jwtsecured.config;
 
-import dev.knowhowto.jwtsecured.repository.UserRepository;
+import com.iqkv.incubator.quickstart.jwtsecured.repository.UserRepository;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
-package dev.knowhowto.jwtsecured.config;
+package com.iqkv.incubator.quickstart.jwtsecured.config;
 
-import dev.knowhowto.jwtsecured.service.JwtAuthenticationFilter;
+import com.iqkv.incubator.quickstart.jwtsecured.service.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

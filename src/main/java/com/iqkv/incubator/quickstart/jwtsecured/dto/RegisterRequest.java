@@ -1,4 +1,4 @@
-package dev.knowhowto.jwtsecured.dto;
+package com.iqkv.incubator.quickstart.jwtsecured.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

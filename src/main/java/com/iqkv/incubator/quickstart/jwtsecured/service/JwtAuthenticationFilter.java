@@ -1,4 +1,4 @@
-package dev.knowhowto.jwtsecured.service;
+package com.iqkv.incubator.quickstart.jwtsecured.service;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

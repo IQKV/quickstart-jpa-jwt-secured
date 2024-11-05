@@ -1,4 +1,4 @@
-package dev.knowhowto.jwtsecured;
+package com.iqkv.incubator.quickstart.jwtsecured;
 
 
 import org.junit.jupiter.api.Assertions;

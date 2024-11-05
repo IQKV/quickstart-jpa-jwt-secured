@@ -1,9 +1,9 @@
-package dev.knowhowto.jwtsecured.web;
+package com.iqkv.incubator.quickstart.jwtsecured.web;
 
-import dev.knowhowto.jwtsecured.dto.AuthenticationRequest;
-import dev.knowhowto.jwtsecured.dto.AuthenticationResponse;
-import dev.knowhowto.jwtsecured.dto.RegisterRequest;
-import dev.knowhowto.jwtsecured.service.AuthenticationService;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationRequest;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationResponse;
+import com.iqkv.incubator.quickstart.jwtsecured.dto.RegisterRequest;
+import com.iqkv.incubator.quickstart.jwtsecured.service.AuthenticationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
