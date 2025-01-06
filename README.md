@@ -1,4 +1,4 @@
-# JWT Auth Example
+# 🚀 JWT Auth Example
 
 JWT-based Spring security REST API.
 
