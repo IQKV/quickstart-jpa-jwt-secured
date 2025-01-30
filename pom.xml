@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.iqkv.incubator.quickstart</groupId>
     <artifactId>quickstart-jpa-jwt-secured</artifactId>
-    <version>24.0.0-SNAPSHOT</version>
+    <version>25.0.0-SNAPSHOT</version>
     <name>jpa-jwt-secured</name>
     <description>JWT-based Spring security REST API</description>
     <licenses>
@@ -31,7 +31,7 @@
     <parent>
         <groupId>com.iqkv.boot</groupId>
         <artifactId>boot-parent-pom</artifactId>
-        <version>24.0.0-SNAPSHOT</version>
+        <version>25.0.0-SNAPSHOT</version>
     </parent>
 
     <properties>
