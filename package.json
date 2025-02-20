@@ -1,5 +1,5 @@
 {
-  "name": "@know-how-spring-boot/quickstart-jpa-jwt-secured",
+  "name": "@iqkv/quickstart-jpa-jwt-secured",
   "version": "25.0.0",
   "description": "Provide an optional Git commit hooks.",
   "private": true,
