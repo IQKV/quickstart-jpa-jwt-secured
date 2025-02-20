@@ -3,7 +3,7 @@ services:
   mysql:
     image: mysql:5.7.44
     container_name: quickstart-dev-jwt-auth-mysql
-    restart: unless-stopped
+    restart: no
     ports:
       - 3306:3306
     environment:
