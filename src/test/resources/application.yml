@@ -34,7 +34,7 @@ spring :
     livereload :
       enabled : false
 
-iqkv :
+application-settings :
   info :
     description : '@project.description@'
     relative-path : '/'
