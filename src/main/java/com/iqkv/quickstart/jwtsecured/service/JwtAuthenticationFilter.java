@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.service;
+package com.iqkv.quickstart.jwtsecured.service;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

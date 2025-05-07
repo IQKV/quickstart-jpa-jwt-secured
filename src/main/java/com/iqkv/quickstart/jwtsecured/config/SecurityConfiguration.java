@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.config;
+package com.iqkv.quickstart.jwtsecured.config;
 
-import com.iqkv.incubator.quickstart.jwtsecured.service.JwtAuthenticationFilter;
+import com.iqkv.quickstart.jwtsecured.service.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
