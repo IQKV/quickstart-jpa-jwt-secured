@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.web;
+package com.iqkv.quickstart.jwtsecured.web;
 
-import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationRequest;
-import com.iqkv.incubator.quickstart.jwtsecured.dto.AuthenticationResponse;
-import com.iqkv.incubator.quickstart.jwtsecured.dto.RegisterRequest;
-import com.iqkv.incubator.quickstart.jwtsecured.service.AuthenticationService;
+import com.iqkv.quickstart.jwtsecured.dto.AuthenticationRequest;
+import com.iqkv.quickstart.jwtsecured.dto.AuthenticationResponse;
+import com.iqkv.quickstart.jwtsecured.dto.RegisterRequest;
+import com.iqkv.quickstart.jwtsecured.service.AuthenticationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

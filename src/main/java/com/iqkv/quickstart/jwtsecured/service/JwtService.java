@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.service;
+package com.iqkv.quickstart.jwtsecured.service;
 
 import java.security.Key;
 import java.util.Date;

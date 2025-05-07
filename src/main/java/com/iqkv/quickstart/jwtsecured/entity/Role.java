@@ -14,19 +14,10 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured;
+package com.iqkv.quickstart.jwtsecured.entity;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+public enum Role {
 
-@SpringBootApplication
-public class JwtSecuredApplication {
-
-  public static void main(String[] args) {
-    SpringApplication springApplication = new SpringApplication(JwtSecuredApplication.class);
-    springApplication.setApplicationStartup(new BufferingApplicationStartup(2048));
-    springApplication.run(args);
-  }
-
+  USER,
+  ADMIN
 }

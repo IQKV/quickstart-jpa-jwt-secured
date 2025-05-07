@@ -14,15 +14,22 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.repository;
+package com.iqkv.quickstart.jwtsecured;
 
-import java.util.Optional;
 
-import com.iqkv.incubator.quickstart.jwtsecured.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+@SpringBootTest
+public class JwtAuthApplicationTests {
 
-  Optional<User> findByEmail(String email);
+  @Test
+  void contextLoad() {
+    Assertions.assertDoesNotThrow(this::doNotThrowException);
+  }
 
+  private void doNotThrowException() {
+    // This method will never throw exception
+  }
 }

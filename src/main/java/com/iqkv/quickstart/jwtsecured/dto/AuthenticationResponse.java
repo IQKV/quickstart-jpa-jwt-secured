@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.dto;
+package com.iqkv.quickstart.jwtsecured.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,10 +25,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
+public class AuthenticationResponse {
 
-  private String firstname;
-  private String lastname;
-  private String email;
-  private String password;
+  private String token;
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.entity;
+package com.iqkv.quickstart.jwtsecured.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.jwtsecured.dto;
+package com.iqkv.quickstart.jwtsecured;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class AuthenticationRequest {
-  private String email;
-  String password;
+@SpringBootApplication
+public class JwtSecuredApplication {
+
+  public static void main(String[] args) {
+    SpringApplication springApplication = new SpringApplication(JwtSecuredApplication.class);
+    springApplication.setApplicationStartup(new BufferingApplicationStartup(2048));
+    springApplication.run(args);
+  }
+
 }

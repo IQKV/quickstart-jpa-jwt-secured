@@ -34,7 +34,7 @@ spring :
     livereload :
       enabled : false
 
-application-settings :
+expertness :
   info :
     description : '@project.description@'
     relative-path : '/'
