@@ -26,7 +26,7 @@ Application uses a MySQL as a persistent storage. Options to get it up:
 This application is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built
 using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
 
-```
+```bash
 git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
 cd quickstart-jpa-jwt-secured
 ./mvnw package
@@ -35,7 +35,7 @@ java -jar target/*.jar
 
 You might also want to use Maven's `spring-boot:run` goal - applications run in an exploded form, as they do in your IDE:
 
-```
+```bash
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
 ```
 
@@ -45,7 +45,7 @@ Now you can access to the Swagger UI here: http://localhost:8080/swagger-ui.html
 
 1. On the command line
 
-```
+```bash
 git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
 ```
 
@@ -73,13 +73,13 @@ quality is measured by:
 
 ### Tests
 
-This project has standard JUnit tests. To run them execute this command:
+This project contains a JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, etc. You can run the test suite using
 
-```text
+```bash
 ./mvnw verify -Puse-qulice
 ```
 
-It is mandatory to keep test code coverage not below **80** percents and cover all business logic and edge cases.
+The minimum percentage of code coverage required for the workflow to pass is **80 %**.
 
 > ### Versioning
 >
