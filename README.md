@@ -16,10 +16,10 @@ The following items should be installed in your system:
 
 ## Database configuration
 
-Application uses a MySQL as a persistent storage. Options to get it up:
+The application uses MySQL as a persistent storage. Options to get it up:
 
-1. Use remote existing mysql. It is needed to specify the path in configs.
-1. Start local mysql in docker `docker compose -f compose.yaml up -d`
+1. Use a remote existing MySQL. It is needed to specify the path in configs.
+1. Start local MySQL in Docker `docker compose -f compose.yaml up -d`
 
 ### Running locally
 
@@ -54,7 +54,7 @@ git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
 In the main menu, choose `File -> Open` and select the Application [pom.xml](pom.xml). Click on the `Open` button.
 Activate "local" profile in the Run settings or set it via environment
 variables. [instruction](https://stackoverflow.com/questions/38520638/how-to-set-spring-profile-from-system-variable)
-Wait to indexing completion and push the green "play" button.
+Wait for indexing completion and push the green "play" button.
 
 3. Navigate to Swagger UI
 
@@ -73,7 +73,7 @@ quality is measured by:
 
 ### Tests
 
-This project contains JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, etc. You can run the test suite using
+This project includes JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, and more. You can run the test suite using
 
 ```bash
 ./mvnw verify -Puse-qulice
