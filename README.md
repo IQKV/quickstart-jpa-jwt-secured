@@ -48,8 +48,8 @@ java -jar target/*.jar
 
 This app uses MySQL. You can either:
 
-1) Point to an existing MySQL via environment variables, or
-2) Start a local MySQL with Docker:
+1. Point to an existing MySQL via environment variables, or
+2. Start a local MySQL with Docker:
 
 ```bash
 docker compose -f compose.yaml up -d mysql
@@ -140,9 +140,9 @@ Minimum code coverage required: **80%**.
 
 ## Working in your IDE
 
-1) Open the project via `pom.xml` in your IDE
-2) Enable the `local` Spring profile in your Run configuration (or pass `-Dspring-boot.run.profiles=local`)
-3) Start the app and navigate to Swagger UI
+1. Open the project via `pom.xml` in your IDE
+2. Enable the `local` Spring profile in your Run configuration (or pass `-Dspring-boot.run.profiles=local`)
+3. Start the app and navigate to Swagger UI
 
 ## Project structure (high level)
 
