@@ -28,7 +28,7 @@ JWT-based Spring Security REST API with JPA, Liquibase migrations, and productio
 
 ## Quickstart
 
-```bash
+```shell script
 git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
 cd quickstart-jpa-jwt-secured
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
@@ -39,7 +39,7 @@ cd quickstart-jpa-jwt-secured
 
 To run as a packaged jar:
 
-```bash
+```shell script
 ./mvnw package
 java -jar target/*.jar
 ```
@@ -51,7 +51,7 @@ This app uses MySQL. You can either:
 1. Point to an existing MySQL via environment variables, or
 2. Start a local MySQL with Docker:
 
-```bash
+```shell script
 docker compose -f compose.yaml up -d mysql
 ```
 
@@ -85,7 +85,7 @@ Base path: `/api/v1`
 
 ### Example: register and authenticate
 
-```bash
+```shell script
 # Register
 curl -sS -X POST http://localhost:8080/api/v1/auth/register \
   -H "Content-Type: application/json" \
@@ -113,7 +113,7 @@ Actuator endpoints (selected are enabled):
 
 Start local Prometheus and Grafana:
 
-```bash
+```shell script
 docker compose -f compose.yaml up -d prometheus grafana
 ```
 
@@ -124,7 +124,7 @@ docker compose -f compose.yaml up -d prometheus grafana
 
 Start SonarQube locally:
 
-```bash
+```shell script
 docker compose -f compose.yaml up -d sonar
 ```
 
@@ -132,7 +132,7 @@ docker compose -f compose.yaml up -d sonar
 
 Run full verification locally (includes Qulice profile):
 
-```bash
+```shell script
 ./mvnw verify -Puse-qulice
 ```
 
