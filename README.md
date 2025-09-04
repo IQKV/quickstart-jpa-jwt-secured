@@ -29,7 +29,7 @@ JWT-based Spring Security REST API with JPA, Liquibase migrations, and productio
 ## Quickstart
 
 ```shell script
-git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
+git clone https://github.com/dimdnk/quickstart-jpa-jwt-secured.git
 cd quickstart-jpa-jwt-secured
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
 ```
