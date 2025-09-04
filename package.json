@@ -1,5 +1,5 @@
 {
-  "name": "@iqkv/quickstart-jpa-jwt-secured",
+  "name": "@dimdnk/quickstart-jpa-jwt-secured",
   "version": "25.0.0",
   "private": true,
   "description": "Provide an optional Git commit hooks.",
