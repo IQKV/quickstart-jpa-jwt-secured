@@ -15,7 +15,7 @@
         </license>
     </licenses>
     <organization>
-        <name>IQKV Foundation</name>
+        <name>KnowHowToDev</name>
         <url>https://iqkv.com</url>
     </organization>
     <developers>
@@ -42,7 +42,7 @@
         <sonar.coverage.exclusions>**/*Config*.java,**/*Properties.java,**/*Test.java,**/Test*.java</sonar.coverage.exclusions>
         <checkstyle.skip>false</checkstyle.skip>
         <maven.gitcommitid.skip>false</maven.gitcommitid.skip>
-        <start-class>com.iqkv.quickstart.jwtsecured.JwtSecuredApplication</start-class>
+        <start-class>com.github.dimdnk.quickstart.jwtsecured.JwtSecuredApplication</start-class>
     </properties>
     <dependencies>
         <dependency>

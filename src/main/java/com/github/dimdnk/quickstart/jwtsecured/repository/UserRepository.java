@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.jwtsecured.repository;
+package com.github.dimdnk.quickstart.jwtsecured.repository;
 
 import java.util.Optional;
 
-import com.iqkv.quickstart.jwtsecured.entity.User;
+import com.github.dimdnk.quickstart.jwtsecured.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {

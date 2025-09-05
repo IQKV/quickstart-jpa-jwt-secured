@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.jwtsecured.config;
+package com.github.dimdnk.quickstart.jwtsecured.config;
 
-import com.iqkv.quickstart.jwtsecured.service.JwtAuthenticationFilter;
+import com.github.dimdnk.quickstart.jwtsecured.service.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

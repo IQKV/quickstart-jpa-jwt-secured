@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.jwtsecured.service;
+package com.github.dimdnk.quickstart.jwtsecured.service;
 
-import com.iqkv.quickstart.jwtsecured.dto.AuthenticationRequest;
-import com.iqkv.quickstart.jwtsecured.dto.AuthenticationResponse;
-import com.iqkv.quickstart.jwtsecured.dto.RegisterRequest;
-import com.iqkv.quickstart.jwtsecured.entity.Role;
-import com.iqkv.quickstart.jwtsecured.entity.User;
-import com.iqkv.quickstart.jwtsecured.repository.UserRepository;
+import com.github.dimdnk.quickstart.jwtsecured.dto.AuthenticationRequest;
+import com.github.dimdnk.quickstart.jwtsecured.dto.AuthenticationResponse;
+import com.github.dimdnk.quickstart.jwtsecured.dto.RegisterRequest;
+import com.github.dimdnk.quickstart.jwtsecured.entity.Role;
+import com.github.dimdnk.quickstart.jwtsecured.entity.User;
+import com.github.dimdnk.quickstart.jwtsecured.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

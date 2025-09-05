@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.jwtsecured;
+package com.github.dimdnk.quickstart.jwtsecured.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class RegisterRequest {
 
-@SpringBootTest
-public class JwtAuthApplicationTests {
-
-  @Test
-  void contextLoad() {
-    Assertions.assertDoesNotThrow(this::doNotThrowException);
-  }
-
-  private void doNotThrowException() {
-    // This method will never throw exception
-  }
+  private String firstname;
+  private String lastname;
+  private String email;
+  private String password;
 }

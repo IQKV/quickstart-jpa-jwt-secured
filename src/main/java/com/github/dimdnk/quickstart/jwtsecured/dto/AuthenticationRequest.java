@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.jwtsecured.dto;
+package com.github.dimdnk.quickstart.jwtsecured.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,10 +25,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-
-  private String firstname;
-  private String lastname;
+public class AuthenticationRequest {
   private String email;
-  private String password;
+  String password;
 }
