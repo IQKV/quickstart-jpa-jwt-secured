@@ -4,7 +4,7 @@ JWT-based Spring Security REST API with JPA, Liquibase migrations, and productio
 
 ## Technology stack
 
-- Java 21
+- Java 25
 - Spring Boot (Web, Security, JPA, Actuator)
 - MySQL (HikariCP), Liquibase
 - Springdoc OpenAPI/Swagger UI
@@ -21,7 +21,7 @@ JWT-based Spring Security REST API with JPA, Liquibase migrations, and productio
 
 ## Prerequisites
 
-- Java 21+
+- Java 25+
 - Git
 - Docker (for optional MySQL/Prometheus/Grafana/SonarQube)
 - An IDE (IntelliJ IDEA recommended)

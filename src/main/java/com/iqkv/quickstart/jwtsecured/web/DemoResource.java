@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured;
+package com.iqkv.quickstart.jwtsecured.web;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class JwtSecuredApplication {
+@RestController
+@RequestMapping("/api/v1/demo")
+record DemoResource() {
 
-  public static void main(String[] args) {
-    SpringApplication springApplication = new SpringApplication(JwtSecuredApplication.class);
-    springApplication.setApplicationStartup(new BufferingApplicationStartup(2048));
-    springApplication.run(args);
+  @GetMapping
+  public ResponseEntity<String> sayHello() {
+    return ResponseEntity.ok("Hello from secured endpoint");
   }
 
 }

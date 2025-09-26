@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.dto;
+package com.iqkv.quickstart.jwtsecured;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class AuthenticationResponse {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-  private String token;
+@SpringBootTest
+public class JwtAuthApplicationTests {
+
+  @Test
+  void contextLoad() {
+    Assertions.assertDoesNotThrow(this::doNotThrowException);
+  }
+
+  private void doNotThrowException() {
+    // This method will never throw exception
+  }
 }

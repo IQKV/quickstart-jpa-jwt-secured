@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.repository;
+package com.iqkv.quickstart.jwtsecured.dto;
 
-import java.util.Optional;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import com.github.dimdnk.quickstart.jwtsecured.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class AuthenticationResponse {
 
-public interface UserRepository extends JpaRepository<User, Integer> {
-
-  Optional<User> findByEmail(String email);
-
+  private String token;
 }

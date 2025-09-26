@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.dto;
+package com.iqkv.quickstart.jwtsecured.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

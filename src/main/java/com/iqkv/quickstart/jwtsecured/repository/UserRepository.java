@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.entity;
+package com.iqkv.quickstart.jwtsecured.repository;
 
-public enum Role {
+import java.util.Optional;
 
-  USER,
-  ADMIN
+import com.iqkv.quickstart.jwtsecured.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+  Optional<User> findByEmail(String email);
+
 }

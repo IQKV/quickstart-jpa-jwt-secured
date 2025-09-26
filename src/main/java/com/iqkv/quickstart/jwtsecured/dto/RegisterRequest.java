@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.web;
+package com.iqkv.quickstart.jwtsecured.dto;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@RestController
-@RequestMapping("/api/v1/demo")
-record DemoResource() {
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class RegisterRequest {
 
-  @GetMapping
-  public ResponseEntity<String> sayHello() {
-    return ResponseEntity.ok("Hello from secured endpoint");
-  }
-
+  private String firstname;
+  private String lastname;
+  private String email;
+  private String password;
 }

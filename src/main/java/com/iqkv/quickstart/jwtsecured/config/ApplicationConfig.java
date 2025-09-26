@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.jwtsecured.config;
+package com.iqkv.quickstart.jwtsecured.config;
 
-import com.github.dimdnk.quickstart.jwtsecured.repository.UserRepository;
+import com.iqkv.quickstart.jwtsecured.repository.UserRepository;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 import lombok.RequiredArgsConstructor;
