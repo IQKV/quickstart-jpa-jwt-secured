@@ -157,11 +157,3 @@ Minimum code coverage required: **80%**.
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
-
-> ### Versioning
->
-> Project uses a three-segment [CalVer](https://calver.org/) scheme: `YY.MM.MICRO`.
->
-> 1. YY – short year (e.g., 6, 16, 106)
-> 2. MM – short month (1…12)
-> 3. MICRO – patch segment
