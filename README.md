@@ -31,7 +31,7 @@ JWT-based Spring Security REST API with JPA, Liquibase migrations, and productio
 ```shell script
 git clone https://github.com/IQKV/quickstart-jpa-jwt-secured.git
 cd quickstart-jpa-jwt-secured
-./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P local
 ```
 
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
